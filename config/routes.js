@@ -32,8 +32,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-//  'post /users':'UserController.createUser',
-
+  'post /users':'UserController.createUser',
+  'get /users':'UserController.readUser',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

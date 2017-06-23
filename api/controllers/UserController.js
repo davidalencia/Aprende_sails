@@ -4,10 +4,7 @@
  * @description :: Server-side logic for managing users
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-/*function createUser(req, res) {
-
-
-
+function createUser(req, res) {
 	console.log("entramos al controlador ");
 	User.create({
 		nombre: req.body.nombre,
@@ -16,12 +13,23 @@
 	}).exec((err, user)=>{
 		if(err)
 			return res.status(500).send("ERROR");
-		return  res.status(201).send("todo salio bien");
+		return  res.ok(foundUsers);
 	});
 }
-*/
-
+function readUser(req,res){
+	return User.find()
+	.then((foundUsers) => {
+		res.status(200).render('readUser',{
+			title: "Usuarios",
+			users: foundUsers,
+			layout: 'layout',
+		});
+	})
+	.catch((err) =>{
+		res.status(500).send("algo ocurrio");
+	})
+}
 module.exports = {
-	//createUser,
-
+	createUser,
+	readUser,
 };
