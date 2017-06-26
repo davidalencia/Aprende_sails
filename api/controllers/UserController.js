@@ -33,6 +33,7 @@ function readUser(req,res){
 
 function saludo(req, res) {
   servicio(req.params.nombre);
+	color("hola "+ req.params.nombre);
 	res.ok("hola "+ req.params.nombre);
 }
 module.exports = {
