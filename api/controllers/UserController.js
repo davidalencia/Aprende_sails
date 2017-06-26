@@ -36,8 +36,14 @@ function saludo(req, res) {
 	color("hola "+ req.params.nombre);
 	res.ok("hola "+ req.params.nombre);
 }
+
+function login(req, res) {
+	req.session.nombre =req.params.nombre;
+	res.ok();
+}
 module.exports = {
 	createUser,
 	readUser,
 	saludo,
+	login,
 };

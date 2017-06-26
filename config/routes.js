@@ -34,7 +34,8 @@ module.exports.routes = {
 
   'post /users':'UserController.createUser',
   'get /users':'UserController.readUser',
-  'get /hola/:nombre': 'UserController.saludo'
+  'get /hola/:nombre': 'UserController.saludo',
+  'get /login/:nombre': 'UserController.login',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
