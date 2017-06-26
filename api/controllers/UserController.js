@@ -16,6 +16,7 @@ function createUser(req, res) {
 		return  res.ok(foundUsers);
 	});
 }
+
 function readUser(req,res){
 	return User.find()
 	.then((foundUsers) => {
@@ -29,7 +30,13 @@ function readUser(req,res){
 		res.status(500).send("algo ocurrio");
 	})
 }
+
+function saludo(req, res) {
+  servicio(req.params.nombre);
+	res.ok("hola "+ req.params.nombre);
+}
 module.exports = {
 	createUser,
 	readUser,
+	saludo,
 };
